@@ -38,13 +38,15 @@ creatingButtons();
 
             var animalImage = $("<img>");
             
+            //you load the stil pictures first 
             animalImage.attr("src", results[i].images.fixed_height_still.url);
+            animalImage.attr("data-state", "still");
+
+            //assign a move and still attribute of the moving Giphy function
+            animalImage.attr("move", results[i].images.fixed_height.url);
+            animalImage.attr("still", results[i].images.fixed_height_still.url);
             animalImage.addClass("aimage");
-            animalImage.attr("data-state", results[i]);
-
-
-            //animalImage.attr("id", i);
-           
+            
             animalDiv.append(p);
             animalDiv.append(animalImage);
 
@@ -52,50 +54,62 @@ creatingButtons();
 
           }
         });
-    };	
+    };  
+
+//Move and Still Giphy
+  $(document).on("click", ".aimage", movingGiphy);
+    function movingGiphy () {
+      var state = $(this).attr("data-state");
+     //this represents the object that is clicked
+      if (state === "still") {
+        //if the state of the image clicked is still, then the src attribute will change to the move attribute
+        //.attr is a method to manipulate the value represented by each tag (manipulating or re-assign)
+        $(this).attr("src", $(this).attr("move"));
+        //The data-state has to be changed to "animate" so the state doesn't stay as "still" and the else part of the function works
+        $(this). attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("still"));
+        $(this).attr("data-state", "still");
+      }
+    }
 
 
 
 // Creating Buttons
 
 function creatingButtons() {
-	$(".animalButtons").empty();
-	for (var i = 0; i < animals.length; i++) {
+  $(".animalButtons").empty();
+  for (var i = 0; i < animals.length; i++) {
 
-		var a = $("<button>");
+    var a = $("<button>");
 
-		a.addClass("animal");
+    a.addClass("animal");
 
-		a.attr("data-name", animals[i]);
+    a.attr("data-name", animals[i]);
 
-		a.text(animals[i]);
+    a.text(animals[i]);
 
-		$(".animalButtons").append(a);
-	}
+    $(".animalButtons").append(a);
+  }
 
 }
 
 $("#addAnimal").on("click", function(event) {
-	event.preventDefault();
+  event.preventDefault();
 
-	var animal = $("#animal-input").val().trim();
+  var animal = $("#animal-input").val().trim();
 
-	animals.push(animal);
+  animals.push(animal);
 
-	creatingButtons();
+  creatingButtons();
   $("#animals").empty();
 
-});
+})
 
 
 
 
 
-// Pause and Play Giphy
 
-$(document).on('click', ".aimage", function () {
-  $(".aimage").mouseover(function(){
-    $(this).attr("src", results[i].images.fixed_height.url);
-  });
-});
-	//creatingButtons();
+
+
