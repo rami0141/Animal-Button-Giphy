@@ -1,0 +1,43 @@
+.jumbotron {
+	background-color: SlateBlue;
+	border-bottom: 15px solid #4aaaa5;
+}
+
+body {
+	background-image: url('../images/stardust.JPG');
+	color: white;
+}
+
+img {
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 35px;
+}
+
+p{
+  text-align: center;
+  font-size: 18px;
+}
+
+button {
+	background-color: SlateBlue;
+	padding: 10px;
+	width: 100px;
+	height:50px;
+	margin: 10px;
+	text-align: center;
+	position: relative;
+	color: white;
+	border: 2px solid #4aaaa5;
+}
+button:hover {
+	background: #4aaaa5;
+}
+
+#animals {
+	display: inline-block;
+
+}

@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-img{
-  cursor:pointer;
-}
-</style>
+
 <head>
   <meta charset="utf-8">
   <title>Animal Buttons</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-    <!-- We'll be dumping our JSON contents in here -->
 
-    <div class="animalButtons"></div>
+<body>
 
-    <!-- This form will be where the user adds an animal button -->
-    <form id="animal-form">
-      <label for="animal-input">Add an animal</label>
-      <input type="text" id="animal-input"><br>
+<!--heading and form-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h1>Animal Buttons!</h1>
+        <h5>Don't be shy.... click away!</h5>
+      </div>
 
-      <!-- This button will trigger our AJAX call -->
-      <input id="addAnimal" type="submit" value="Submit">
-    </form>
+      <!-- We'll be dumping our JSON contents in here -->
+      <div class="col-md-3">
+        <!-- This form will be where the user adds an animal button -->
+        <form id="animal-form float-left">
+          <label for="animal-input">Add An Animal Button:</label><br>
+          <input type="text" id="animal-input"><br><br>
+          <!-- This button will trigger our AJAX call -->
+          <input id="addAnimal" type="submit" value="Submit">
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div id="animals"></div>
+<!--buttons and pictures-->
 
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="animalButtons text-primary"></div>
+    </div>
+
+    <div class="col-md-8">
+      <div id="animals"></div>
+    </div>
+  </div>
+</div>
 
 <!-- adding jQuery -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!--adding JavaScript-->
- <script type="text/javascript" src="javascript/app.js"></script>
+ <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
 </html>

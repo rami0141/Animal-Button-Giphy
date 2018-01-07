@@ -38,8 +38,10 @@ creatingButtons();
 
             var animalImage = $("<img>");
             
-            animalImage.attr("src", results[i].images.fixed_height.url);
+            animalImage.attr("src", results[i].images.fixed_height_still.url);
             animalImage.addClass("aimage");
+            animalImage.attr("data-state", results[i]);
+
 
             //animalImage.attr("id", i);
            
@@ -87,11 +89,13 @@ $("#addAnimal").on("click", function(event) {
 
 
 
+
+
 // Pause and Play Giphy
 
-$(document).on('mouseover', ".aimage", function (){
+$(document).on('click', ".aimage", function () {
   $(".aimage").mouseover(function(){
-    $(this).attr("src", "https://media2.giphy.com/media/jSqZDS0LhmHwk/200_s.gif");
+    $(this).attr("src", results[i].images.fixed_height.url);
   });
 });
-	creatingButtons();
+	//creatingButtons();
