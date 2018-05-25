@@ -8,4 +8,8 @@ Under every gif, its rating (PG, G, so on).
 
 The user can also create new buttons with their animal of choice.
 
+## Deployed
+https://rami0141.github.io/Animal-Button-Giphy/
 
+## Built With
+- [Giphy API](https://github.com/Giphy)
