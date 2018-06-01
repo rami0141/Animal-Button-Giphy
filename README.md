@@ -14,4 +14,5 @@ The user can also create new buttons with their animal of choice.
 https://rami0141.github.io/Animal-Button-Giphy/
 
 ## Built With
-- [Giphy API](https://github.com/Giphy)
+- [Giphy API](https://github.com/Giphy) API for Giphy library 
+- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) Front End Library
